@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{serviceName}} – Where do you live?
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+href: "/where-does-the-other-parent-live",
+text: "Back"
+}) }}
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Will you be paying or receiving child maintenance?
+    </h1>{{releaseVersion | log }}
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="paying-or-recieving-cm" name="paying-or-recieving-cm" type="radio"
+              value="paying">
+            <label class="govuk-label govuk-radios__label" for="paying-or-recieving-cm">
+              Paying
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="paying-or-recieving-cm-2" name="paying-or-recieving-cm" type="radio"
+              value="receiving">
+            <label class="govuk-label govuk-radios__label" for="paying-or-recieving-cm-2">
+              Receiving
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <form action="/court-decision" method="post" novalidate>
+
+      <input type="hidden" name="continue" value="true">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+  </div>
+
+
+{% endblock %}

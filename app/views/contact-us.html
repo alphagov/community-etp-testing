@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{serviceName}} – Contact us
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+href: "/court-decision",
+text: "Back"
+}) }}
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">You need to contact us</h1>{{releaseVersion | log }}
+    <p class="govuk-body">You need to contact the Child Maintenance Service if you’ve had a court decision about child
+      maintenance payments in the last 12 months.</p>
+    <p class="govuk-body">You will need to tell us the date the court decision started.</p>
+
+    <div class="govuk-inset-text">
+      <h2 class="govuk-heading-m">Child Maintenance Service</h2>
+      <p class="govuk-body govuk-!-margin-bottom-0">Telephone: 0800 171 2345</p>
+      <p class="govuk-body">Monday to Friday, 8:00am to 3:30pm (excluding bank holidays)</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-0">Relay UK: 18001 0800 171 2345</p>
+      <p class="govuk-body govuk-!-margin-bottom-0">Monday to Friday, 8:00am to 8:00pm (excluding bank holidays)</p>
+      <p class="govuk-body govuk-!-margin-bottom-0">Calls to the Child Maintenance Service are free from landlines and mobiles.</p>
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-0">If you use British Sign Language</h2>
+      <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link" href="https://www.youtube.com/watch?v=Osx7FFxFpNY">Check if you can use the video sign language relay service</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link" href="https://dwpcmg.signvideo.net/">Video relay service for British Sign Language (BSL) users</a></p>
+      <p class="govuk-body">Monday to Friday, 9:30am to 3:30pm (excluding bank holidays)</p>
+    </div>
+  </div>
+
+{% endblock %}

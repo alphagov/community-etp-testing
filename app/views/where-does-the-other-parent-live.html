@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{serviceName}} – Where does the other parent live?
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+href: "/where-do-you-live",
+text: "Back"
+}) }}
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Where does the other parent live?
+    </h1>{{releaseVersion | log }}
+
+    <div class="govuk-form-group">
+      <div id="more-detail-hint" class="govuk-hint">
+        Provide the town or city and country that the other parent lives in. <br>If you do not know where the other parent lives, write 'I do not know where the other parent lives'.
+      </div>
+      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="3" aria-describedby="more-detail-hint"></textarea>
+    </div>
+
+    <form action="/paying-or-receiving" method="post" novalidate>
+
+      <input type="hidden" name="continue" value="true">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{serviceName}} – Have you had a court decision about child maintenance payments in the last 12 months?
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+href: "/paying-or-receiving",
+text: "Back"
+}) }}
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Have you had a court decision about child maintenance payments in the last 12 months?
+    </h1>{{releaseVersion | log }}
+    <p class="govuk-hint">
+      This type of decision is sometimes called a ’court order’, ’maintenance order’ or ’minute of agreement’. We do not
+      need to know about any court orders for your children’s living arrangements.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="court-decision" name="court-decision" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="court-decision">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="court-decision-2" name="court-decision" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="court-decision-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <form action="/contact-us" method="post" novalidate>
+
+        <input type="hidden" name="continue" value="true">
+  
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+  
+      </form>
+  </div>
+
+
+{% endblock %}
